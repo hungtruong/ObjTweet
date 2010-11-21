@@ -1,0 +1,25 @@
+ObjTweet
+======
+ObjTweet is a helper class for opening links to iOS Twitter apps from within your own iOS application. You can use ObjTweet for opening a Twitter client with a prepopulated message or opening a Twitter client to a designated user.
+
+Because ObjTweet does not know which Twitter applications (if any) the user has installed beforehand, it simply goes through a list of known openURL schemes until a compatible Twitter client is found, starting with the official Twitter iOS app.
+
+Usage
+-----
+Copy the ObjTweet.h and ObjTweet.m files into your Xcode project.
+Import the header like so:
+
+    #import "ObjTweet.h"
+
+
+When you want to tweet, instantiate the ObjTweet object:
+
+    ObjTweet *tweet = [[ObjTweet alloc] init];
+    
+To open the Twitter client with a message:
+
+    [tweet openTwitterWithStatus: @"Hello World!"];
+    
+To open the Twitter client on a user's profile:
+
+    [tweet openUserInTwitter: @"hungtruong"];
